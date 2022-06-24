@@ -12,7 +12,7 @@ next.onclick = function () {
     } else {
         COUNT++
     }
-    images.src='/images/'+COUNT+'.png';
+    images.src='images/'+COUNT+'.png';
 }
 
 previous.onclick = function () {
@@ -21,13 +21,13 @@ previous.onclick = function () {
     } else {
         COUNT=145
     }
-    images.src='/images/'+COUNT+'.png';
+    images.src='images/'+COUNT+'.png';
 }
 
 go.onclick = function () {
     let temp = parseInt(inputButton.value);
     if (1 <= temp <=145) {
-        images.src='/images/'+temp+'.png';  
+        images.src='images/'+temp+'.png';  
     } else {
         alert("Ошибка!")
     }
