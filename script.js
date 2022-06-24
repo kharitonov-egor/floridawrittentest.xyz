@@ -8,7 +8,7 @@ let COUNT=1
 
 function OnLoadFunction () {
     if (window.screen.width <= 699) {
-        images.width == window.screen.width - 200
+        images.width == window.screen.width
     }
 }
 
