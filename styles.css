@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
+
+:root {
+    --back-white: #ffffff;
+    --back-dark: #222;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--back-dark);
+    color: #f1f1f1;
+    transition: all 250ms;
+    position: relative;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.pos {
+    position: absolute;
+}
+.bottomright {
+    bottom: 5px;
+    right: 5px;
+}
+
+.bottomleft {
+    bottom: 5px;
+    left: 5px;
+}
+
+.toprigth {
+    top: 5px;
+    right: 5px;
+}
+
+.topleft {
+    top: 5px;
+    left: 5px;
+}
+
+.buttonCSS {
+    width: 90px;
+    height: 30px;
+}
+
+.inputButton{
+    height: 30px;
+    width: 75px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
