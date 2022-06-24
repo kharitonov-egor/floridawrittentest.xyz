@@ -6,6 +6,12 @@ const inputButton = document.querySelector('#inputButton')
 
 let COUNT=1
 
+function OnLoadFunction () {
+    if (window.screen.width <= 699) {
+        images.width == window.screen.width - 200
+    }
+}
+
 next.onclick = function () {
     if (COUNT>=145) {
         COUNT=1
