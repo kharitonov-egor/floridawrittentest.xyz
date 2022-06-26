@@ -30,10 +30,16 @@ previous.onclick = function () {
     images.src='images/'+COUNT+'.PNG';
 }
 
-go.onclick = function () {
+go.onclick = GoToPageFunction
+
+function GoToPageFunction () {
     let temp = parseInt(inputButton.value);
-    if (1 <= temp <=145) {
-        images.src='images/'+temp+'.PNG';  
+    if (1 <= temp && temp <=145) {
+        if (temp) {
+            images.src='images/'+temp+'.PNG';  
+        } else {
+            //pass
+        }
     } else {
         alert("Ошибка!")
     }
@@ -41,3 +47,10 @@ go.onclick = function () {
     COUNT = temp
     inputButton.value = ""
 }
+
+function enterKeyPressed(event) {
+    if (event.keyCode == 13) {
+        GoToPageFunction ();
+    } else {
+    }
+ }

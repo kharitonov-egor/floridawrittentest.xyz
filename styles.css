@@ -20,6 +20,10 @@ body {
     box-sizing: border-box;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 .image {
     position: absolute;
     top: 50%;
@@ -28,27 +32,28 @@ body {
     max-height: 100%;
     max-width: 100%;
 } 
+
 .pos {
     position: absolute;
 }
 .bottomright {
-    bottom: 5px;
-    right: 5px;
+    bottom: 10px;
+    right: 10px;
 }
 
 .bottomleft {
-    bottom: 5px;
-    left: 5px;
+    bottom: 10px;
+    left: 10px;
 }
 
 .toprigth {
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
 }
 
 .topleft {
-    top: 5px;
-    left: 5px;
+    top: 10px;
+    left: 10px;
 }
 
 .buttonCSS {

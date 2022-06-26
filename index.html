@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class E Written Test</title>
+    <title>Florida Written test</title>
     <link rel="stylesheet" href="styles.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 
     <meta property="og:title" content="Written test practice"/>
-    <meta name="description" content="Практикуйся отвечать на вопросы теста в DMV">
+    <meta name="description" content="Практикуйтесь отвечать на вопросы теста в DMV">
     <meta name="keywords" content="Written test, written test по русски, e class written test, e class по русски">
     <meta name="twitter:title" content="Written test practice">
 
@@ -20,11 +20,24 @@
     <meta name="twitter:image" content="icons/plate.jpg">
     <meta property="vk:image" content="icons/plate.jpg">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-232950896-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-232950896-2');
+    </script>
+
 </head>
 <body onload="OnLoadFunction()">
 
     <div class="image">
-        <img src="images/1.PNG" id="images" width="700" onContextMenu="return false;">
+        <img src="images/1.PNG" id="images" width="700" onContextMenu="return false;" object-position: -120% 0;>
     </div>
 
     <div class="pos topleft">
@@ -40,16 +53,16 @@
     </div>
 
     <div class="pos toprigth">
-        <input placeholder="Go to page" type="text" class="inputButton" id="inputButton">
+        <input placeholder="Go to page" type="text" class="inputButton" id="inputButton" onkeypress="return enterKeyPressed(event)">
         <input value="Go" class="buttonCSS" type="button" id="go">
     </div>
 
 
     <script src="script.js"></script>
 
-<!---
-<a target="_blank" href="https://icons8.com/icon/s1-q7JfG-sh7/florida-flag">Florida Flag</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
---->
+    <!---
+    <a target="_blank" href="https://icons8.com/icon/s1-q7JfG-sh7/florida-flag">Florida Flag</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    --->
 
 </body>
 </html>
