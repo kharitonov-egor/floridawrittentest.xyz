@@ -1,49 +1,53 @@
+// DOM elements declaration:
+
 const next = document.querySelector('#next')
 const images=document.querySelector('#images')
 const previous = document.querySelector('#previous')
 const go = document.querySelector('#go')
 const inputButton = document.querySelector('#inputButton')
 
+// Buttons functions reference:
+
 next.onclick = NextFunction
 previous.onclick = PreviousFunction
 go.onclick = GoToImageFunction
 
-let COUNT = 1
+let COUNTER = 1 // Setting some counter to 1 so that we can change images
 
 function NextFunction () {
-    if (COUNT>=145) {
-        COUNT=1
+    if (COUNTER>=145) {
+        COUNTER=1
     } else {
-        COUNT++
+        COUNTER++
     }
-    images.src='images/'+COUNT+'.PNG';
+    images.src='images/'+COUNTER+'.PNG';
 }
 
 function PreviousFunction () {
-    if (COUNT>1) { 
-        COUNT--
+    if (COUNTER>1) { 
+        COUNTER--
     } else {
-        COUNT=145
+        COUNTER=145
     }
-    images.src='images/'+COUNT+'.PNG';
+    images.src='images/'+COUNTER+'.PNG';
 }
 
 function GoToImageFunction () {
-    let temp = parseInt(inputButton.value);
-    if (1 <= temp && temp <=145) {
+    let temp = parseInt(inputButton.value); // temp = input of "Go to image" input without any letters
+    if (1 <= temp && temp <=145) { // There are only 145 images
         if (temp) {
-            images.src='images/'+temp+'.PNG';  
+            images.src='images/'+temp+'.PNG'; // Image changing only if temp equals something
         }
     } else {
         alert("Ошибка!")
     }
 
-    COUNT = temp
-    inputButton.value = ""
+    COUNTER = temp // Global variable COUNTER now equals temp so NextFunction and PreviousFunction can be triggered
+    inputButton.value = "" // Clearing any numbers after function done image changing
 }
 
-function enterKeyPressed(event) {
-    if (event.keyCode == 13) {
+function enterKeyPressed(event) { // If enter pressed then function above starts
+    if (event.keyCode == 13) { 
         GoToImageFunction ();
     } else {
     }
@@ -51,10 +55,10 @@ function enterKeyPressed(event) {
 
  document.onkeydown = checkKey;
 
- function checkKey(event) {
-     if (event.keyCode == '37') {
+ function checkKey(event) { 
+     if (event.keyCode == '37') { // If "leftarrow" key is pressed PreviousFunction starts
         PreviousFunction();
-     } else if (event.keyCode == '39') {
+     } else if (event.keyCode == '39') { // If "rightarrow" key is pressed NextFunction starts
         NextFunction();
      }
  
