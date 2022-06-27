@@ -4,15 +4,13 @@ const previous = document.querySelector('#previous')
 const go = document.querySelector('#go')
 const inputButton = document.querySelector('#inputButton')
 
-let COUNT=1
+next.onclick = NextFunction
+previous.onclick = PreviousFunction
+go.onclick = GoToImageFunction
 
-function OnLoadFunction () {
-    if (window.screen.width <= 699) {
-        images.width == window.screen.width
-    }
-}
+let COUNT = 1
 
-next.onclick = function () {
+function NextFunction () {
     if (COUNT>=145) {
         COUNT=1
     } else {
@@ -21,7 +19,7 @@ next.onclick = function () {
     images.src='images/'+COUNT+'.PNG';
 }
 
-previous.onclick = function () {
+function PreviousFunction () {
     if (COUNT>1) { 
         COUNT--
     } else {
@@ -30,15 +28,11 @@ previous.onclick = function () {
     images.src='images/'+COUNT+'.PNG';
 }
 
-go.onclick = GoToPageFunction
-
-function GoToPageFunction () {
+function GoToImageFunction () {
     let temp = parseInt(inputButton.value);
     if (1 <= temp && temp <=145) {
         if (temp) {
             images.src='images/'+temp+'.PNG';  
-        } else {
-            //pass
         }
     } else {
         alert("Ошибка!")
@@ -50,7 +44,18 @@ function GoToPageFunction () {
 
 function enterKeyPressed(event) {
     if (event.keyCode == 13) {
-        GoToPageFunction ();
+        GoToImageFunction ();
     } else {
     }
+ }
+
+ document.onkeydown = checkKey;
+
+ function checkKey(event) {
+     if (event.keyCode == '37') {
+        PreviousFunction();
+     } else if (event.keyCode == '39') {
+        NextFunction();
+     }
+ 
  }
