@@ -5,19 +5,19 @@
     --back-dark: #222;
 }
 
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
     width: 100vw;
     height: 100vh;
     background-color: var(--back-dark);
     color: #f1f1f1;
-    transition: all 250ms;
     position: relative;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 textarea:focus, input:focus, button:focus{
@@ -50,8 +50,7 @@ textarea:focus, input:focus, button:focus{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-height: 100%;
-    max-width: 100%;
+    height: 650px;
 } 
 
 .pos {
@@ -65,9 +64,14 @@ textarea:focus, input:focus, button:focus{
     height: 300px;
 }
 
-h3,p {margin: 0;}
-a {color:white}
-h3 { margin-bottom: 10px;}
+a {
+    color:white;
+}
+
+h3,h4 { 
+    margin-bottom: 10px;
+    margin-top:10px;
+}
 
 .bottomright {
     bottom: 10px;
@@ -87,6 +91,8 @@ h3 { margin-bottom: 10px;}
 .topleft {
     top: 10px;
     left: 10px;
+    width: 175px;
+    height: 49px;
 }
 
 .buttonCSS {

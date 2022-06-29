@@ -53,7 +53,7 @@ function enterKeyPressed(event) { // If enter pressed then function above starts
     }
  }
 
- document.onkeydown = checkKey;
+document.onkeydown = checkKey;
 
  function checkKey(event) { 
      if (event.keyCode == '37') { // If "leftarrow" key is pressed PreviousFunction starts
