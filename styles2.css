@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
+
+:root {
+    --back-white: #ffffff;
+    --back-dark: #222;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+div {box-sizing: border-box;}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--back-dark);
+    color: #f1f1f1;
+}
+
+.container {
+    width: 500px;
+    height: 100vh;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 200px 0;
+}
+
+.DonateButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 175px;
+    height: 49px;
+}
+
+a {
+    color:white;
+}
+
+p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 2;
+}
+
+h3,h4 { 
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+#headerHow {
+    margin-top: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 95vw;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+ ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

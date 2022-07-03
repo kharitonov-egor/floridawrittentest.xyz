@@ -17,7 +17,6 @@ body {
     height: 100vh;
     background-color: var(--back-dark);
     color: #f1f1f1;
-    position: relative;
 }
 
 textarea:focus, input:focus, button:focus{
@@ -50,7 +49,7 @@ textarea:focus, input:focus, button:focus{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 650px;
+    width: 650px;
 } 
 
 .pos {
@@ -62,15 +61,6 @@ textarea:focus, input:focus, button:focus{
     left: 10px;
     width: 390px;
     height: 300px;
-}
-
-a {
-    color:white;
-}
-
-h3,h4 { 
-    margin-bottom: 10px;
-    margin-top:10px;
 }
 
 .bottomright {
@@ -105,6 +95,27 @@ h3,h4 {
     height: 30px;
     width: 81px;
 }
+
+@media only screen and (max-width: 600px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .ActualImage {
+        width: 55vw;
+    }
+    .image {
+        width: 200px;
+    }
+
+    
+}
+
+.ActualImage {
+    width: 650px;
+}
+
 
 ::-webkit-scrollbar {
     width: 10px;
