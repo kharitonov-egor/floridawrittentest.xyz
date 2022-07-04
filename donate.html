@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Права в Флориде</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
@@ -37,57 +37,24 @@
 </head>
 <body>
 
-    <div class="pos topleft">
-        <a href="https://floridawrittentest.xyz/donate.html" target="_blank">
+    <div class="DonateButton">
+        <a href="https://www.buymeacoffee.com/egorthesame" target="_blank">
             <img src="icons/coffee-yellow.png" width="175">
         </a>
     </div>
 
-    <div class="pos start">
-        <button id="StartButton" class="buttonCSS">Старт</button>
-    </div>
 
-    <div class="pos bottomright">
-        <button value="Next" id="next" class="buttonCSS">
-            <span>Следующий</span>
-        </button>
-    </div>
+    <div class="container">
+        <h2 class="headerHow">Варианты доната</h2>
 
-    <div class="pos bottomleft">
-        <button value="Previous" id="previous" class="buttonCSS">
-            <span>Предыдущий</span>
-        </button>
-    </div>
+        <h3><a href="https://www.buymeacoffee.com/egorthesame" target="_blank">Сервис buy me a coffee</a></h3>
 
-    <!---
-
-    <div class="pos toprigth">
-        <input placeholder="Go to image" type="text" class="inputButton" id="inputButton" onkeypress="return enterKeyPressed(event)">
-        <button value="Go" class="buttonCSS" id="go">
-            <span id="ENTERID">Go</span>
-        </button>
-    </div>
-     --->
-
-    <h2 id="righttext" class="pos rightwrongtext">Правильно!</h2>
-    <h2 id="wrongtext" class="pos rightwrongtext">Неправильно!</h2>
-
-    <div class="pos center" id="Questionss">
-
-        <h3 id="testQuestion">Тестовый вопрос</h3>
+        <h3>Криптовалюта:</h3>
         
-        <h2 id="question">...</h2>
+        <p>BTC: bc1qycexghafrkee4zp330q7xvqjh02tzcyqznx3fw</p>
+        <p>USDT TRC20: TXGphNvTUMuRyxrr2wX9PHdGkB27c14phH </p>
+        <p>ETH или USDT ERC20: 0x3b08263E0a3e1a72D6B17ad2cc52622249d24668</p>
 
-        <div class="margin"><input type="checkbox" id="A"> <span id="AText">...</span><br></div>
-        <div class="margin"><input type="checkbox" id="B"> <span id="BText">...</span> <br></div>
-        <div class="margin"><input type="checkbox" id="C"> <span id="CText">...</span> <br></div>
-
-        <button id="CheckRight" class="buttonCSS">Дать ответ</button>
-        <!---
-        <button id="SkipButton" class="buttonCSS">Skip</button>
-        --->
-        <p id="right">Правильно: 0</p>
-        <p id="wrong">Неправильно: 0</p>
     </div>
 
     <script src="script.js"></script>

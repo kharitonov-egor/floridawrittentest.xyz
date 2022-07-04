@@ -23,44 +23,22 @@ textarea:focus, input:focus, button:focus{
     outline: none;
 }
 
-#NextID {
-    position: absolute;
-    top: 8px;
-    right: 15px;
-}
-
-#PreviousID{
-    position: absolute;
-    top: 8px;
-    right: 5px;
-}
-
-.ImageInButtonsRIGHT {
-    margin-right: 30px;
-    margin-top:1.5px;
-}
-
-.ImageInButtonsLEFT {
-    margin-top:1.5px;
-    margin-left: -55px;
-}
-
-.image {
+.center {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 650px;
+    display: none;
+} 
+
+.start {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
 } 
 
 .pos {
     position: absolute;
-}
-
-.left {
-    top: 70px;
-    left: 10px;
-    width: 390px;
-    height: 300px;
 }
 
 .bottomright {
@@ -85,50 +63,138 @@ textarea:focus, input:focus, button:focus{
     height: 49px;
 }
 
-.buttonCSS {
-    width: 90px;
-    height: 30px;
-    border: 0;
-}
-
 .inputButton{
     height: 30px;
     width: 81px;
 }
 
 @media only screen and (max-width: 600px) {
-    body {
-        height: 100vh;
-        width: 100vw;
+    .center {
+        width: 95vw;
     }
+}
 
-    .ActualImage {
-        width: 55vw;
+@media only screen and (max-width: 300px) {
+    h2 {
+        font-size:medium;
     }
-    .image {
-        width: 200px;
-    }
-
-    
-}
-
-.ActualImage {
-    width: 650px;
 }
 
 
-::-webkit-scrollbar {
-    width: 10px;
+.margin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: justify;
 }
-  
- ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+
+.rightwrongtext {
+    right: 50vw;
+    left: 50vw;
+    top: 10px;
+    display: none;
 }
-  
-::-webkit-scrollbar-thumb {
-    background: #888;
+
+#right {
+    margin-top: 20px;
+    color:lime;
+    font-size: 17px;
 }
-  
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+
+#righttext {
+    color:lime;
+}
+
+#wrong {
+    color:red;
+    font-size: 17px;
+}
+
+#wrongtext {
+    color:red;
+}
+
+#testQuestion {
+    margin-bottom: 15px;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.25); /* IE */
+  -moz-transform: scale(1.25); /* FF */
+  -webkit-transform: scale(1.25); /* Safari and Chrome */
+  -o-transform: scale(1.25); /* Opera */
+  transform: scale(1.25);
+  padding: 10px;
+}
+
+#next {
+    display: none;
+}
+
+#previous {
+    display: none;
+}
+
+/* CSS */
+.buttonCSS {
+    width: 120px;
+    height: 40px;
+    border: 0;
+    font-size: 14px;
+    appearance: none;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: #24292E;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    padding: 6px 16px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+.buttonCSS:hover {
+    background-color: #F3F4F6;
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+
+.buttonCSS:disabled {
+    background-color: #FAFBFC;
+    border-color: rgba(27, 31, 35, 0.15);
+    color: #959DA5;
+    cursor: default;
+}
+
+.buttonCSS:active {
+    background-color: #EDEFF2;
+    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+    transition: none 0s;
+}
+
+.buttonCSS:focus {
+    outline: 1px transparent;
+}
+
+.buttonCSS:before {
+    display: none;
+}
+
+.buttonCSS:-webkit-details-marker {
+    display: none;
 }
