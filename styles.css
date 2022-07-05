@@ -49,6 +49,7 @@ textarea:focus, input:focus, button:focus{
 .bottomleft {
     bottom: 10px;
     left: 10px;
+    transform: translateY(100%);
 }
 
 .toprigth {
@@ -159,7 +160,30 @@ input[type=checkbox]
     display: none;
 }
 
-/* CSS */
+.smalldoge {
+    position:fixed;
+    bottom:0px;
+    left:100%;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+    left: 45px; 
+    transform: translateY(100%);
+}
+
+.bigdoge {
+    position:fixed;
+    bottom:0px;
+    left:100%;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+    left: 45px; 
+    transform: translateY(100%);
+}
+
 .buttonCSS {
     width: 120px;
     height: 40px;

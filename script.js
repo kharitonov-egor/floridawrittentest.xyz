@@ -20,6 +20,11 @@ const wrong=document.querySelector('#wrong')
 const righttext = document.querySelector('#righttext')
 const wrongtext = document.querySelector('#wrongtext')
 const testQuestion = document.querySelector('#testQuestion')
+const ATextButton = document.querySelector('#ATextButton')
+const BTextButton = document.querySelector('#BTextButton')
+const CTextButton = document.querySelector('#CTextButton')
+const SmallDOGE = document.querySelector('#SmallDOGE')
+const BigDOGE = document.querySelector('#BigDOGE')
 
 const QuestionChangeDelay = 2000
 
@@ -87,13 +92,18 @@ function StartFunction () {
 }
 
 function ChangeHeader () {
-    question.innerHTML = questions[CurrentQuestionIndex].question;
-    AText.innerHTML = questions[CurrentQuestionIndex].answers[0].text;
-    BText.innerHTML = questions[CurrentQuestionIndex].answers[1].text;
-    CText.innerHTML = questions[CurrentQuestionIndex].answers[2].text;
-    A.checked=false
-    B.checked=false
-    C.checked=false
+    if (CurrentQuestionIndex != questions.length-1) {
+        question.innerHTML = questions[CurrentQuestionIndex].question;
+        AText.innerHTML = questions[CurrentQuestionIndex].answers[0].text;
+        BText.innerHTML = questions[CurrentQuestionIndex].answers[1].text;
+        CText.innerHTML = questions[CurrentQuestionIndex].answers[2].text;
+        A.checked=false
+        B.checked=false
+        C.checked=false
+    } else {
+        FinalWords ()
+    }
+
 }
 
 function CheckRightFuntion () {
@@ -108,18 +118,19 @@ function CheckRightFuntion () {
             if (CurrentQuestionIndex!=0) {RIGHT++}
             righttext.style.display = "block";
             AText.style.color="lime"
-
+            DogeShowRight()
         } else if (questions[CurrentQuestionIndex].answers[1].correct == true && B.checked==true) {
             if (CurrentQuestionIndex!=0) {RIGHT++}
             righttext.style.display = "block";
             BText.style.color="lime"
-
+            DogeShowRight()
         } else if (questions[CurrentQuestionIndex].answers[2].correct == true && C.checked==true) {
             if (CurrentQuestionIndex!=0) {RIGHT++}
             righttext.style.display = "block";
              CText.style.color="lime"
-
+            DogeShowRight()
         } else {
+            DogeShowWrong ()
             WRONG++
             wrongtext.style.display = "block";
 
@@ -168,6 +179,17 @@ function CheckRightFuntion () {
 
 }
 
+
+function DogeShowRight () {
+    BigDOGE.style.transform="translateY(20%)"
+    setTimeout("BigDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay);
+}
+
+function DogeShowWrong () {
+    SmallDOGE.style.transform="translateY(20%)"
+    setTimeout("SmallDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay);
+}
+
 function ChangeRightWrong () {
     right.innerHTML = 'Правильно: '+RIGHT+'';
     wrong.innerHTML = 'Неправильно: '+WRONG+'';
@@ -187,9 +209,9 @@ function PreviousFunction () {
     }
 }
 
-
 function SkipFunction () {
-    alert("Кнопка в разработке")
+    alert("Скоро будет")
+
 }
 
 document.onkeydown = checkKey;
@@ -201,4 +223,25 @@ document.onkeydown = checkKey;
         NextFunction();
      }
  
- }
+}
+
+
+
+function FinalWords () {
+
+    question.innerHTML = "Спасибо!"
+    AText.style.display = "none"
+    BText.style.display = "none"
+    CText.style.display = "none"
+    CheckRight.style.display = "none"
+    SkipButton.style.display = "none"
+    A.style.display = "none"
+    B.style.display = "none"
+    C.style.display = "none"
+    A.checked=false
+    B.checked=false
+    C.checked=false
+
+}
+
+
