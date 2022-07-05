@@ -21,9 +21,11 @@ const righttext = document.querySelector('#righttext')
 const wrongtext = document.querySelector('#wrongtext')
 const testQuestion = document.querySelector('#testQuestion')
 
+const QuestionChangeDelay = 2000
+
 const questions = [
     {
-        question:"0. 2+2?",
+        question:"Сколько будет два плюс два?",
         answers: [
             {text: '22', correct: false},
             {text: '4', correct: true},
@@ -63,10 +65,11 @@ const questions = [
 
 // Buttons functions reference:
 
-next.onclick = NextFunction
-previous.onclick = PreviousFunction
+//next.onclick = NextFunction
+//previous.onclick = PreviousFunction
 CheckRight.onclick = CheckRightFuntion 
 StartButton.onclick = StartFunction
+SkipButton.onclick = SkipFunction
 
 var CurrentQuestionIndex = 0
 var RIGHT = 0
@@ -77,8 +80,8 @@ function StartFunction () {
     StartButton.style.display = "none";
     righttext.style.display = "none";
     wrongtext.style.display = "none";
-    next.style.display = "block";
-    previous.style.display = "block";
+    //next.style.display = "block";
+    //previous.style.display = "block";
 
     ChangeHeader()
 }
@@ -94,27 +97,75 @@ function ChangeHeader () {
 }
 
 function CheckRightFuntion () {
-    if (questions[CurrentQuestionIndex].answers[0].correct == true && A.checked == true && B.checked == false && C.checked==false) {
-        if (CurrentQuestionIndex!=0) {RIGHT++}
-        righttext.style.display = "block";
-    } else if (questions[CurrentQuestionIndex].answers[1].correct == true && B.checked == true && A.checked == false && C.checked==false) {
-        if (CurrentQuestionIndex!=0) {RIGHT++}
-        righttext.style.display = "block";
-    } else if (questions[CurrentQuestionIndex].answers[2].correct == true && C.checked == true && A.checked == false && B.checked==false) {
-        if (CurrentQuestionIndex!=0) {RIGHT++}
-        righttext.style.display = "block";
+    var NumberOfChecked = A.checked + B.checked + C.checked;
+    if (NumberOfChecked > 1) {
+        alert("Выберите только один ответ!")
+        A.checked=false
+        B.checked=false
+        C.checked=false
     } else {
-        WRONG++
-        wrongtext.style.display = "block";
+        if (questions[CurrentQuestionIndex].answers[0].correct == true && A.checked==true) {
+            if (CurrentQuestionIndex!=0) {RIGHT++}
+            righttext.style.display = "block";
+            AText.style.color="lime"
+
+        } else if (questions[CurrentQuestionIndex].answers[1].correct == true && B.checked==true) {
+            if (CurrentQuestionIndex!=0) {RIGHT++}
+            righttext.style.display = "block";
+            BText.style.color="lime"
+
+        } else if (questions[CurrentQuestionIndex].answers[2].correct == true && C.checked==true) {
+            if (CurrentQuestionIndex!=0) {RIGHT++}
+            righttext.style.display = "block";
+             CText.style.color="lime"
+
+        } else {
+            WRONG++
+            wrongtext.style.display = "block";
+
+            if (questions[CurrentQuestionIndex].answers[0].correct == true) {
+
+                AText.style.color="lime"
+
+                if (B.checked==true) {
+                    BText.style.color="red"
+                } else {
+                    CText.style.color="red"
+                }
+
+            } else if (questions[CurrentQuestionIndex].answers[1].correct == true) {
+                BText.style.color="lime"
+
+                if (A.checked==true) {
+                    AText.style.color="red"
+                } else {
+                    CText.style.color="red"
+                }
+            } else if (questions[CurrentQuestionIndex].answers[2].correct == true) {
+                CText.style.color="lime"
+
+                
+                if (A.checked==true) {
+                    AText.style.color="red"
+                } else {
+                    BText.style.color="red"
+                }
+            }
+                        
+        }
+    
+        ChangeRightWrong ()
+    
+        setTimeout(NextFunction,QuestionChangeDelay)
+        setTimeout("righttext.style.display = 'none'" ,QuestionChangeDelay);
+        setTimeout("wrongtext.style.display = 'none'" ,QuestionChangeDelay);
+        setTimeout("testQuestion.style.display = 'none'" ,QuestionChangeDelay);
+        setTimeout("AText.style.color='#f1f1f1'" ,QuestionChangeDelay);
+        setTimeout("BText.style.color='#f1f1f1'" ,QuestionChangeDelay);
+        setTimeout("CText.style.color='#f1f1f1'" ,QuestionChangeDelay);
+
     }
 
-
-    ChangeRightWrong ()
-
-    setTimeout(NextFunction,1500)
-    setTimeout("righttext.style.display = 'none'" ,1500);
-    setTimeout("wrongtext.style.display = 'none'" ,1500);
-    setTimeout("testQuestion.style.display = 'none'" ,1500);
 }
 
 function ChangeRightWrong () {
@@ -136,15 +187,11 @@ function PreviousFunction () {
     }
 }
 
-/*
+
 function SkipFunction () {
-    questionsListNumbers.splice(CurrentQuestionIndex-1,1)
-    questionsListNumbers.push(CurrentQuestionIndex)
-    CurrentQuestionIndex++
-    ChangeHeader()
-    CurrentQuestionIndex--
+    alert("Кнопка в разработке")
 }
-*/
+
 document.onkeydown = checkKey;
 
  function checkKey(event) { 
