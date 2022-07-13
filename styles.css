@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
 
 :root {
-    --back-current: #222;
-    --text-current: #f1f1f1;
+    --back-white: #ffffff;
+    --back-dark: #222;
 }
+
 
 * {
     box-sizing: border-box;
@@ -15,8 +16,8 @@ body {
     font-family: 'Open Sans', sans-serif;
     width: 100vw;
     height: 100vh;
-    background-color: var(--back-current);
-    color: var(--text-current);
+    background-color: var(--back-dark);
+    color: #f1f1f1;
 }
 
 textarea:focus, input:focus, button:focus{
@@ -55,6 +56,7 @@ textarea:focus, input:focus, button:focus{
 .toprigth {
     top: 10px;
     right: 10px;
+    
 }
 
 .topleft {
@@ -66,7 +68,8 @@ textarea:focus, input:focus, button:focus{
 
 .inputButton{
     height: 30px;
-    width: 81px;
+    width: 110px;
+    display: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -80,29 +83,6 @@ textarea:focus, input:focus, button:focus{
         font-size:medium;
     }
 }
-
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--back-current);
-        color:black;
-    }
-
-    a {
-        color:black;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--back-current);
-        color: #f1f1f1;
-    }
-
-    a {
-        color: #f1f1f1;
-    }
-}
-
 
 .margin {
     margin-top: 20px;
@@ -184,8 +164,12 @@ input[type=checkbox]
     transform: translateY(100%);
 }
 
+#go {
+    display: none;
+}
+
 .buttonCSS {
-    width: 120px;
+    width: 110px;
     height: 40px;
     border: 0;
     font-size: 14px;

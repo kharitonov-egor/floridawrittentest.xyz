@@ -62,25 +62,3 @@ h3,h4 {
         width: 95vw;
     }
 }
-
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--back-white);
-        color:black;
-    }
-
-    a {
-        color:black;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: var(--back-dark);
-        color: #f1f1f1;
-    }
-
-    a {
-        color: #f1f1f1;
-    }
-}
