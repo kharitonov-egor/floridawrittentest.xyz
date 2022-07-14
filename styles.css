@@ -42,6 +42,11 @@ textarea:focus, input:focus, button:focus{
     position: absolute;
 }
 
+#inputButton {
+    margin-bottom: 10px;
+    display: none;
+}
+
 .bottomright {
     bottom: 10px;
     right: 10px;
@@ -76,18 +81,30 @@ textarea:focus, input:focus, button:focus{
     .center {
         width: 95vw;
     }
+
+    h3 {
+        font-size: 14px;
+    }
+
+    .margin {
+        font-size: 12px;
+    }
+
+    .center {
+        margin-top: 75px;
+    }
 }
 
 @media only screen and (max-width: 300px) {
-    h2 {
-        font-size:medium;
+    h3 {
+        font-size:12px;
     }
 }
 
 .margin {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 16px;
     text-align: justify;
 }
 
@@ -95,6 +112,10 @@ textarea:focus, input:focus, button:focus{
     right: 50vw;
     left: 50vw;
     top: 10px;
+    display: none;
+}
+
+#znak {
     display: none;
 }
 
@@ -121,14 +142,18 @@ textarea:focus, input:focus, button:focus{
     margin-bottom: 15px;
 }
 
+.margin-bottom {
+    margin-bottom: 15px;
+}
+
 input[type=checkbox]
 {
   /* Double-sized Checkboxes */
-  -ms-transform: scale(1.25); /* IE */
-  -moz-transform: scale(1.25); /* FF */
-  -webkit-transform: scale(1.25); /* Safari and Chrome */
-  -o-transform: scale(1.25); /* Opera */
-  transform: scale(1.25);
+  -ms-transform: scale(1.15); /* IE */
+  -moz-transform: scale(1.15); /* FF */
+  -webkit-transform: scale(1.15); /* Safari and Chrome */
+  -o-transform: scale(1.15); /* Opera */
+  transform: scale(1.15);
   padding: 10px;
 }
 

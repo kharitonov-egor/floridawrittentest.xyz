@@ -25,8 +25,9 @@ const BTextButton = document.querySelector('#BTextButton')
 const CTextButton = document.querySelector('#CTextButton')
 const SmallDOGE = document.querySelector('#SmallDOGE')
 const BigDOGE = document.querySelector('#BigDOGE')
+const znak = document.querySelector('#znak')
 
-const QuestionChangeDelay = 2000
+const QuestionChangeDelay = 3000
 
 // Buttons functions reference:
 
@@ -40,6 +41,8 @@ var CurrentQuestionIndex = 0
 var RIGHT = 0
 var WRONG = 0
 
+QuestionsWithImages=[5,52,57,68,77,83,85,103,105,109,110,127,129]
+
 function StartFunction () {
     Questionss.style.display = "block";
     StartButton.style.display = "none";
@@ -48,20 +51,31 @@ function StartFunction () {
     //next.style.display = "block";
     //previous.style.display = "block";
     inputButton.style.display="block";
-    go.style.display="block"
+    go.style.display="block";
 
     ChangeHeader()
 }
 
 function ChangeHeader () {
     if (CurrentQuestionIndex != questions.length-1) {
-        question.innerHTML = questions[CurrentQuestionIndex].question;
-        AText.innerHTML = questions[CurrentQuestionIndex].answers[0].text;
-        BText.innerHTML = questions[CurrentQuestionIndex].answers[1].text;
-        CText.innerHTML = questions[CurrentQuestionIndex].answers[2].text;
-        A.checked=false
-        B.checked=false
-        C.checked=false
+		if (CurrentQuestionIndex != 0) {
+			testQuestion.style.display = 'none';
+		} else {
+			testQuestion.style.display = 'block';
+		}
+		if (QuestionsWithImages.includes(CurrentQuestionIndex)) {
+			changeZnak(CurrentQuestionIndex)
+		} else {
+			znak.style.display="none"
+		}
+		
+		question.innerHTML = questions[CurrentQuestionIndex].question;
+		AText.innerHTML = questions[CurrentQuestionIndex].answers[0].text;
+		BText.innerHTML = questions[CurrentQuestionIndex].answers[1].text;
+		CText.innerHTML = questions[CurrentQuestionIndex].answers[2].text;
+		A.checked=false
+		B.checked=false
+		C.checked=false
     } else {
         FinalWords ()
     }
@@ -132,10 +146,10 @@ function CheckRightFuntion () {
         setTimeout(NextFunction,QuestionChangeDelay)
         setTimeout("righttext.style.display = 'none'" ,QuestionChangeDelay);
         setTimeout("wrongtext.style.display = 'none'" ,QuestionChangeDelay);
-        setTimeout("testQuestion.style.display = 'none'" ,QuestionChangeDelay);
         setTimeout("AText.style.color='#f1f1f1'" ,QuestionChangeDelay);
         setTimeout("BText.style.color='#f1f1f1'" ,QuestionChangeDelay);
         setTimeout("CText.style.color='#f1f1f1'" ,QuestionChangeDelay);
+		setTimeout("testQuestion.style.display = 'none'" ,QuestionChangeDelay);
 
     }
 
@@ -187,7 +201,10 @@ document.onkeydown = checkKey;
  
 }
 
-
+function changeZnak (CurrentQuestionIndex) {
+	znak.src='images/'+CurrentQuestionIndex+'.png';
+	znak.style.display="block"
+}
 
 function FinalWords () {
 
