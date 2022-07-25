@@ -22,11 +22,11 @@ body {
 }
 
 .container {
-    width: 500px;
+    width: 600px;
     height: 100vh;
     margin: 0 auto;
     justify-content: center;
-    padding: 200px 0;
+    padding: 50px 0;
 }
 
 .DonateButton {
@@ -55,6 +55,7 @@ h3,h4 {
 
 .headerHow {
     margin-top: 0px;
+    margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 600px) {
