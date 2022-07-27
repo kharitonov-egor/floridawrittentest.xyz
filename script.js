@@ -14,8 +14,8 @@ const AText = document.querySelector('#AText')
 const BText = document.querySelector('#BText')
 const CText = document.querySelector('#CText')
 const SkipButton = document.querySelector('#SkipButton')
-const right=document.querySelector('#right')
-const wrong=document.querySelector('#wrong')
+const right = document.querySelector('#right')
+const wrong = document.querySelector('#wrong')
 const righttext = document.querySelector('#righttext')
 const wrongtext = document.querySelector('#wrongtext')
 const testQuestion = document.querySelector('#testQuestion')
@@ -23,12 +23,12 @@ const SmallDOGE = document.querySelector('#SmallDOGE')
 const BigDOGE = document.querySelector('#BigDOGE')
 const Sign = document.querySelector('#Sign')
 
-const QuestionChangeDelay = 3000
+const QuestionChangeDelay = 3000 // A number of ms after question is change after answer
 
 // Buttons functions reference:
 
-CheckRight.onclick = CheckRightFuntion 
-StartButton.onclick = StartFunction
+CheckRight.onclick = CheckIfRight 
+StartButton.onclick = StartQuiz
 SkipButton.onclick = SkipFunction
 
 // Setting up variables and array for futher use:
@@ -37,12 +37,12 @@ var CurrentQuestionIndex = 0
 var RIGHT = 0
 var WRONG = 0
 
-QuestionsWithImages=[5,52,57,68,77,83,85,103,105,109,110,127,129]
+const QuestionsWithImages = [5,52,57,68,77,83,85,103,105,109,110,127,129] // Array with QuestionsIndexes that have sign images
 
 // When user presses start button function:
 
-function StartFunction () {
-    Questionss.style.display = "block"; // Questions block, input of number of questions and button appears
+function StartQuiz () {
+    questionsBlock.style.display = "block"; // Questions block, input of number of questions and button appears
     inputButton.style.display = "block";
     go.style.display = "block";
 
@@ -52,116 +52,87 @@ function StartFunction () {
 }
 
 function ChangeHeader () {
+    if (CurrentQuestionIndex == questions.length-1) {EndOfQuestions()}
 
-    if (CurrentQuestionIndex != questions.length-1) {
+	if (CurrentQuestionIndex != 0) {testQuestion.style.display = 'none';} 
+	else {testQuestion.style.display = 'block';}
+	
+	if (QuestionsWithImages.includes(CurrentQuestionIndex)) {ChangeSign(CurrentQuestionIndex)} 
+	else {Sign.style.display="none"}
 
-		if (CurrentQuestionIndex != 0) {
-			testQuestion.style.display = 'none';
-		} else {
-			testQuestion.style.display = 'block';
-		}
-		if (QuestionsWithImages.includes(CurrentQuestionIndex)) {
-			changeImage(CurrentQuestionIndex)
-		} else {
-			Sign.style.display="none"
-		}
-		
-		question.innerHTML = questions[CurrentQuestionIndex].question;
-		AText.innerHTML = questions[CurrentQuestionIndex].answers[0].text;
-		BText.innerHTML = questions[CurrentQuestionIndex].answers[1].text;
-		CText.innerHTML = questions[CurrentQuestionIndex].answers[2].text;
+	//Changing question and answers:
+	
+	question.innerHTML = questions[CurrentQuestionIndex].question;
+	AText.innerHTML = questions[CurrentQuestionIndex].answers[0].text;
+	BText.innerHTML = questions[CurrentQuestionIndex].answers[1].text;
+	CText.innerHTML = questions[CurrentQuestionIndex].answers[2].text;
 
-		A.checked = B.checked = C.checked = false // All checkboxes to unchecked position
-
-    } else {FinalWords ()}
-
+	A.checked = B.checked = C.checked = false // All checkboxes to unchecked position
 }
 
-function CheckRightFuntion () {
+function CheckIfRight () {
     var NumberOfChecked = A.checked + B.checked + C.checked;
 
-    if (NumberOfChecked > 1) {
+    if (NumberOfChecked > 1) {return alert("Выберите только один ответ!")}
 
-        alert("Выберите только один ответ!")
-		A.checked=B.checked=C.checked=false // All checkboxes to unchecked position
+	if (questions[CurrentQuestionIndex].answers[0].correct == true) {
+		AText.style.color="lime"
+		if (A.checked==true) {RightAnswer()} 
+		else {
+			WrongAnswer()
+			if (B.checked==true) {BText.style.color="red"} 
+			else {CText.style.color="red"}
+		}
+	} else if (questions[CurrentQuestionIndex].answers[1].correct == true) {
+		BText.style.color="lime"
+		if (B.checked==true) {RightAnswer()}
+		else {
+			WrongAnswer()
+			if (A.checked==true) {AText.style.color="red"} 
+			else {CText.style.color="red"}
+		}
+		
+	} else if (questions[CurrentQuestionIndex].answers[2].correct == true) {
+		CText.style.color="lime"
+		if (C.checked==true) {RightAnswer()}
+		else {
+			WrongAnswer()
+			if (A.checked==true) {AText.style.color="red"} 
+			else {BText.style.color="red"}
+		}
+	}
 
-    } else {
+	ChangeRightWrong ()
 
-		// If right answer is equal to checked checkbox then it's right
+	setTimeout(() => {
 
-        if (questions[CurrentQuestionIndex].answers[0].correct == true && A.checked==true) {
-			AText.style.color="lime"
-			RightAnswer()
-            DogeShow("RIGHT")
-        } else if (questions[CurrentQuestionIndex].answers[1].correct == true && B.checked==true) {
-			BText.style.color="lime"
-			RightAnswer()
-            DogeShow("RIGHT")
-        } else if (questions[CurrentQuestionIndex].answers[2].correct == true && C.checked==true) {
-			CText.style.color="lime"
-			RightAnswer()
-            DogeShow("RIGHT")
-        } else {
-            DogeShow ("WRONG")
-            WRONG++
-            wrongtext.style.display = "block";
+		NextQuestion()
+		righttext.style.display = wrongtext.style.display = "none"; // Wrong and Right text above to dissapear
+		AText.style.color=BText.style.color=CText.style.color="#f1f1f1"; // Answers text to white again
 
-            if (questions[CurrentQuestionIndex].answers[0].correct == true) {
 
-                AText.style.color="lime"
-
-                if (B.checked==true) {
-                    BText.style.color="red"
-                } else {
-                    CText.style.color="red"
-                }
-
-            } else if (questions[CurrentQuestionIndex].answers[1].correct == true) {
-                BText.style.color="lime"
-
-                if (A.checked==true) {
-                    AText.style.color="red"
-                } else {
-                    CText.style.color="red"
-                }
-            } else if (questions[CurrentQuestionIndex].answers[2].correct == true) {
-                CText.style.color="lime"
-                
-                if (A.checked==true) {
-                    AText.style.color="red"
-                } else {
-                    BText.style.color="red"
-                }
-            }
-                        
-        }
-    
-        ChangeRightWrong ()
-    
-        setTimeout(NextFunction,QuestionChangeDelay)
-        setTimeout("righttext.style.display = wrongtext.style.display = 'none'" ,QuestionChangeDelay); // Wrong and Right text above to dissapear
-        setTimeout("AText.style.color=BText.style.color=CText.style.color='#f1f1f1'" ,QuestionChangeDelay); // Answers text to white again
-		setTimeout("testQuestion.style.display = 'none'" ,QuestionChangeDelay); // 
-
-    }
-
+	}, QuestionChangeDelay)
 }
+
 
 function RightAnswer () {
 	if (CurrentQuestionIndex!=0) {RIGHT++}
 	righttext.style.display = "block";
+
+	// Showing big Doge:
+
+	BigDOGE.style.transform="translateY(20%)"
+	setTimeout("BigDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay); 
 }
 
-function DogeShow (RightOrWrong) {
-	if (RightOrWrong=="RIGHT") {
-		console.log(2)
-		BigDOGE.style.transform="translateY(20%)"
-		setTimeout("BigDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay);
-	} else {
-		SmallDOGE.style.transform="translateY(20%)"
-		setTimeout("SmallDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay);
-	}
+function WrongAnswer () {
+	if (CurrentQuestionIndex!=0) {WRONG++}
+	wrongtext.style.display = "block";
 
+	//Showing small Doge:
+
+	SmallDOGE.style.transform="translateY(20%)"
+	setTimeout("SmallDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay);
 }
 
 function ChangeRightWrong () {
@@ -169,55 +140,46 @@ function ChangeRightWrong () {
     wrong.innerHTML = 'Неправильно: '+WRONG+'';
 }
 
-function NextFunction () {
-    if (CurrentQuestionIndex != questions.length-1) {
-        CurrentQuestionIndex++
-        ChangeHeader()
-    }
+function NextQuestion () {
+    if (CurrentQuestionIndex != questions.length-1) {CurrentQuestionIndex++}
+	ChangeHeader()
 }
 
-function PreviousFunction () {
-    if (CurrentQuestionIndex != 0) {
-        CurrentQuestionIndex--
-        ChangeHeader()
-    }
+function PreviousQuestion () {
+    if (CurrentQuestionIndex != 0) {CurrentQuestionIndex--} 
+	ChangeHeader()
 }
 
 function SkipFunction () {
     alert("Эта функция будет добавлена")
 }
 
-document.onkeydown = checkKey;
+document.onkeydown = CheckKey;
 
- function checkKey(event) { 
-     if (event.keyCode == '37') { // If "leftarrow" key is pressed PreviousFunction starts
-        PreviousFunction();
-     } else if (event.keyCode == '39') { // If "rightarrow" key is pressed NextFunction starts
-        NextFunction();
-     }
- 
+function CheckKey(event) { 
+	// If "leftarrow" key is pressed PreviousQuestion starts
+	// If "rightarrow" key is pressed NextQuestion starts
+
+	if (event.keyCode == '37') {PreviousQuestion();}
+	if (event.keyCode == '39') {NextQuestion();}
 }
 
-function changeImage (CurrentQuestionIndex) {
+function ChangeSign (CurrentQuestionIndex) {
 	Sign.src='images/'+CurrentQuestionIndex+'.png';
 	Sign.style.display="block"
 }
 
-function FinalWords () {
-
+function EndOfQuestions () {
     question.innerHTML = "Спасибо!"
     AText.style.display = BText.style.display = CText.style.display = "none" // All text next to checkboxes dissapear
     CheckRight.style.display = "none"
     SkipButton.style.display = "none"
     A.style.display = B.style.display = C.style.display = "none" // All checkboxes dissapear
 	A.checked = B.checked = C.checked = false // All checkboxes to unchecked position
-
 }
 
 go.onclick = function () {
-
     CurrentQuestionIndex = inputButton.value
-
     ChangeHeader(CurrentQuestionIndex)
     inputButton.value = ""
 }
