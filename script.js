@@ -22,6 +22,7 @@ const testQuestion = document.querySelector('#testQuestion')
 const SmallDOGE = document.querySelector('#SmallDOGE')
 const BigDOGE = document.querySelector('#BigDOGE')
 const Sign = document.querySelector('#Sign')
+const toHead = document.querySelector('#toHead')
 
 const QuestionChangeDelay = 3000 // A number of ms after question is change after answer
 

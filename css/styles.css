@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    width: 600px;
+    width: 800px;
     height: 100vh;
     margin: 0 auto;
     justify-content: center;
@@ -45,7 +45,7 @@ p {
     margin-top: 15px;
     margin-bottom: 15px;
     line-height: 1.5;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 h3,h4 { 
@@ -55,7 +55,7 @@ h3,h4 {
 
 .headerHow {
     margin-top: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -63,3 +63,17 @@ h3,h4 {
         width: 95vw;
     }
 }
+
+.pos {
+    position: absolute;
+}
+
+.developedWrapper {
+    margin-top: 60px;
+}
+
+.developed{
+    margin: auto;
+    width: 32%;
+}
+

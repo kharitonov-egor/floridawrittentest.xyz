@@ -37,17 +37,17 @@
 </head>
 <body>
 
-
     <img src="icons/smalldoge.png" class="smalldoge" width="125" height="125" id="SmallDOGE">
 
     <img src="icons/bigdoge.png" class="bigdoge" width="125" height="125" id="BigDOGE">
 
     <div class="pos topleft">
-        <a href="donate.html" target="_blank">
-            <img src="icons/coffee-yellow.png" width="175">
-        </a>
+        
+        <a href="donate.html" target="_blank"><img src="icons/coffee-yellow.png" width="175"></a>
 
+             
         <img src="images/5.png" width="175" id="Sign">
+
     </div>
 
     <div class="pos start">
@@ -102,9 +102,16 @@
     </div>
 
     <div class="pos toprigth">
-        
-        <input placeholder="Номер" type="text" class="buttonCSS" id="inputButton">
-        <input value="Перейти" class="buttonCSS" type="button" id="go">
+
+        <div style="float:left">
+            <button value="text" id="toHead" class="buttonCSS toheadcss" onclick="window.location.href='index.html'">На главную</button>
+        </div>
+
+        <div>
+            <input placeholder="Номер задания" type="text" class="buttonCSS" id="inputButton">
+            <input value="Перейти" class="buttonCSS" type="button" id="go">
+        </div>
+
     </div>
 
     <script src="script.js"></script>
