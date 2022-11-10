@@ -24,13 +24,28 @@ const BigDOGE = document.querySelector('#BigDOGE')
 const Sign = document.querySelector('#Sign')
 const toHead = document.querySelector('#toHead')
 
+const Algo0 = document.querySelector('#Algo0')
+const Algo1 = document.querySelector('#Algo1')
+const Algo2 = document.querySelector('#Algo2')
+const Algo3 = document.querySelector('#Algo3')
+
+const Docs0 = document.querySelector('#Docs0')
+const Docs1 = document.querySelector('#Docs1')
+const Docs2 = document.querySelector('#Docs2')
+
+const Prep0 = document.querySelector('#Prep0')
+const Prep1 = document.querySelector('#Prep1')
+const Prep2 = document.querySelector('#Prep2')
+
+const Translator228 = document.querySelector('#Translator228')
+
+
+const HowToLicense = document.querySelector('#HowToLicense')
+
 const QuestionChangeDelay = 3000 // A number of ms after question is change after answer
 
 // Buttons functions reference:
 
-CheckRight.onclick = CheckIfRight 
-StartButton.onclick = StartQuiz
-SkipButton.onclick = SkipFunction
 
 // Setting up variables and array for futher use:
 
@@ -183,6 +198,52 @@ go.onclick = function () {
     CurrentQuestionIndex = inputButton.value
     ChangeHeader(CurrentQuestionIndex)
     inputButton.value = ""
+}
+
+// 0 for Russian
+// 1 for English
+
+// let languageNow = 0;
+
+function MEGATRANSLATOR () {
+
+	alert("This function will be added soon")
+	// if (languageNow == 1) {TranslateToEnglish()}
+	// else if (languageNow == 0) {TranslateToRussian()};
+
+}
+
+function TranslateToEnglish () {
+	HowToLicense.innerHTML = "Getting driver license in Florida";
+
+	Algo0.innerHTML = "Algorithm"
+	Algo1.innerHTML = "1. If you don't have / had driver license of another state / country get course online"
+	Algo2.innerHTML = "2. Register for written test in DMV. For training use free simulator (russian language only)"
+	Algo3.innerHTML = "3. Register and pass road test in DMV"
+
+	Docs0.innerHTML = "Documents"
+	Docs1.innerHTML = "List of required documents"
+	Docs2.innerHTML = "Price: $50-80 for road test and issuance of a driver's licence"
+
+
+	Prep0.innerHTML = "Study materials"
+	Prep1.innerHTML = "List of DMVs on a map"
+}
+
+function TranslateToRussian () {
+	HowToLicense.innerHTML = "Как получить водительские права в Флориде?";
+
+	Algo0.innerHTML = "Алгоритм"
+	Algo1.innerHTML = "1. Если у Вас нету прав в любой стране кроме США: пройдите <a href='https://www.flhsmv.gov/driver-licenses-id-cards/education-courses/driver-improvement-schools/traffic-law-substance-abuse-education-tlsae-find-approved-listing-tlsae-course-providers/' target='_blank'>обучение</a> онлайн."
+	Algo2.innerHTML = "2. Запишитесь на сдачу Written test (теории) в DMV в Вашем county. Для подготовки используйте бесплатный <a href='questions.html' target='_blank'>тренажёр</a>."
+	Algo3.innerHTML = "3. Сдайте Road Test (практику) в DMV."
+
+
+	Docs0.innerHTML = "Документы"
+
+
+
+	Prep0.innerHTML = "Материалы для подготовки"
 }
 
 // Array with all questions:

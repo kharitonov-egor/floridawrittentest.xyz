@@ -26,7 +26,6 @@ body {
     height: 100vh;
     margin: 0 auto;
     justify-content: center;
-    padding: 50px 0;
 }
 
 .DonateButton {
@@ -35,6 +34,13 @@ body {
     left: 10px;
     width: 175px;
     height: 49px;
+    display: none;
+}
+
+.translatebuttoncss {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 a {
@@ -45,7 +51,6 @@ p {
     margin-top: 15px;
     margin-bottom: 15px;
     line-height: 1.5;
-    font-size: 16px;
 }
 
 h3,h4 { 
@@ -55,25 +60,67 @@ h3,h4 {
 
 .headerHow {
     margin-top: 0px;
+    padding-top: 20px;
     margin-bottom: 35px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1150px) {
     .container {
         width: 95vw;
+        height: 100vh;
+        margin-left: 2.5vw;
+        margin-right: 2.5vw;
     }
+    
+    .DonateButton {
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+
+    .licensePlate {
+        display: none;
+        width: 0px;
+        height: 0px;
+    }
+
+    .headerHow {
+        font-size: 1.75em;
+    }
+
+    .container h2 {
+        font-size: 1.25em;
+    }
+
+    .developed {
+        display: block;
+    }
+
+    .headerHow {
+        padding-top: 50px;
+    }
+
 }
 
 .pos {
     position: absolute;
 }
 
-.developedWrapper {
-    margin-top: 60px;
-}
-
 .developed{
-    margin: auto;
-    width: 32%;
+    text-align: center;
+    margin-bottom: 1vh;
 }
 
+.section {
+    padding-bottom: 25px;
+}
+
+h6 {
+    font-weight: normal;
+}
+
+.licensePlate {
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+}
