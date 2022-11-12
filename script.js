@@ -46,6 +46,9 @@ const QuestionChangeDelay = 3000 // A number of ms after question is change afte
 
 // Buttons functions reference:
 
+CheckRight.onclick = CheckIfRight 
+StartButton.onclick = StartQuiz
+SkipButton.onclick = SkipFunction
 
 // Setting up variables and array for futher use:
 

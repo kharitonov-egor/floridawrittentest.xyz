@@ -39,8 +39,9 @@ body {
 
 .translatebuttoncss {
     position: absolute;
-    top: 10px;
+    top: 10px;  
     left: 10px;
+    display: none;
 }
 
 a {
@@ -59,17 +60,22 @@ h3,h4 {
 }
 
 .headerHow {
-    margin-top: 0px;
     padding-top: 20px;
     margin-bottom: 35px;
 }
 
+.developed{
+    text-align: center;
+    margin-top: 5vh;
+}
+
 @media only screen and (max-width: 1150px) {
+
     .container {
-        width: 95vw;
+        width: 90vw;
         height: 100vh;
-        margin-left: 2.5vw;
-        margin-right: 2.5vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
     }
     
     .DonateButton {
@@ -84,31 +90,23 @@ h3,h4 {
         height: 0px;
     }
 
-    .headerHow {
-        font-size: 1.75em;
-    }
-
     .container h2 {
         font-size: 1.25em;
     }
 
     .developed {
-        display: block;
+        margin-top: 0vh;
     }
 
     .headerHow {
-        padding-top: 50px;
+        padding-top: 25px;
+        font-size: 1.75em;
     }
 
 }
 
 .pos {
     position: absolute;
-}
-
-.developed{
-    text-align: center;
-    margin-bottom: 1vh;
 }
 
 .section {
