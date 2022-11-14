@@ -61,7 +61,7 @@ const QuestionsWithImages = [5,52,57,68,77,83,85,103,105,109,110,127,129] // Arr
 // When user presses start button function:
 
 function StartQuiz () {
-    questionsBlock.style.display = "block"; // Questions block, input of number of questions and button appears
+    questionsBlock.style.display = "grid"; // Questions block, input of number of questions and button appears
     inputButton.style.display = "block";
     go.style.display = "block";
 
