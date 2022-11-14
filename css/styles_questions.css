@@ -84,7 +84,7 @@ textarea:focus, input:focus, button:focus{
     }
 
     h3 {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .margin {
@@ -93,6 +93,10 @@ textarea:focus, input:focus, button:focus{
 
     .center {
         margin-top: 75px;
+    }
+
+    #SmallDOGE, #BigDOGE {
+        display: none;
     }
 }
 
@@ -105,8 +109,7 @@ textarea:focus, input:focus, button:focus{
 .margin {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 16px;
-    text-align: justify;
+    font-size: 14px;
 }
 
 .rightwrongtext {
@@ -128,6 +131,7 @@ textarea:focus, input:focus, button:focus{
     margin-top: 20px;
     color:lime;
     font-size: 17px;
+    font-weight: bold;
 }
 
 #righttext {
@@ -137,6 +141,7 @@ textarea:focus, input:focus, button:focus{
 #wrong {
     color:red;
     font-size: 17px;
+    font-weight: bold;
 }
 
 #wrongtext {
