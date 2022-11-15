@@ -71,13 +71,15 @@ function StartQuiz () {
 }
 
 function ChangeHeader () {
-    if (CurrentQuestionIndex == questions.length-1) {EndOfQuestions()}
+    if (CurrentQuestionIndex == questions.length) {EndOfQuestions()}
 
 	if (CurrentQuestionIndex != 0) {testQuestion.style.display = 'none';} 
 	else {testQuestion.style.display = 'block';}
 	
 	if (QuestionsWithImages.includes(CurrentQuestionIndex)) {ChangeSign(CurrentQuestionIndex)} 
-	else {Sign.style.display="none"}
+	else {
+		Sign.style.display="none"
+		toHead.style.marginTop = "0px"}
 
 	//Changing question and answers:
 	
@@ -92,7 +94,9 @@ function ChangeHeader () {
 function CheckIfRight () {
     var NumberOfChecked = A.checked + B.checked + C.checked;
 
-    if (NumberOfChecked > 1) {return alert("Выберите только один ответ!")}
+	if (NumberOfChecked == 0) {return alert("Выберите вариант ответа. Choose your answer.")}
+
+    if (NumberOfChecked > 1) {return alert("Выберите только один ответ. Choose only one answer.")}
 
 	if (questions[CurrentQuestionIndex].answers[0].correct == true) {
 		AText.style.color="lime"
@@ -170,7 +174,7 @@ function PreviousQuestion () {
 }
 
 function SkipFunction () {
-    alert("Эта функция будет добавлена")
+    alert("Эта функция будет добавлена. This function will be added.")
 }
 
 document.onkeydown = CheckKey;
@@ -186,6 +190,7 @@ function CheckKey(event) {
 function ChangeSign (CurrentQuestionIndex) {
 	Sign.src='images/'+CurrentQuestionIndex+'.png';
 	Sign.style.display="block"
+	toHead.style.marginTop = "10px"
 }
 
 function EndOfQuestions () {
@@ -210,7 +215,7 @@ go.onclick = function () {
 
 function MEGATRANSLATOR () {
 
-	alert("This function will be added soon")
+	alert("Эта функция скоро будет добавлена. This function will be added soon.")
 	// if (languageNow == 1) {TranslateToEnglish()}
 	// else if (languageNow == 0) {TranslateToRussian()};
 

@@ -7,6 +7,8 @@
     <title>Права в Флориде</title>
     <link rel="stylesheet" href="css/styles_questions.css">
 
+    <noscript>Please turn on Javascript for this site to work. Пожалуйста включите Javascript для работы данного сайта.</noscript>
+
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
@@ -48,6 +50,10 @@
              
         <img src="images/5.png" width="175" id="Sign">
 
+        <div>
+            <button value="text" id="toHead" class="buttonCSS toheadcss" onclick="window.location.href='index.html'">На главную</button>
+        </div>
+
     </div>
 
     <div class="pos start">
@@ -78,13 +84,16 @@
 
     <div class="center" id="questionsBlock">
 
-        <div>
+        <div class="rightwrongWrapper">
             <h2 id="righttext" class="margin-bottom rightwrongtext">Правильно!</h2>
             <h2 id="wrongtext" class="margin-bottom rightwrongtext">Неправильно!</h2>
+        </div>
+
+        <div>
 
             <h4 id="testQuestion">Тестовый вопрос</h4>
             
-            <h3 id="question">...</h3>
+            <h2 id="question">...</h2>
 
             <div class="margin"><input type="checkbox" id="A"> <span id="AText">...</span><br></div>
             <div class="margin"><input type="checkbox" id="B"> <span id="BText">...</span> <br></div>
@@ -93,7 +102,7 @@
             <div>
                 
                 <button id="CheckRight" class="buttonCSS">Ответить</button>
-                <button id="SkipButton" class="buttonCSS">Пропустить</button>
+                <button id="SkipButton" class="buttonCSS" style="display: none;">Пропустить</button>
 
             </div>
 
@@ -102,15 +111,16 @@
             
         </div>
 
-
+        <div class="developed">
+            <div style="text-align: center;">
+                 <h6>Developed by <a href="https://kharitonovegor.com" target="_blank">Egor Kharitonov</a></h6>
+            </div>
+           
+        </div>
 
     </div>
 
     <div class="pos toprigth">
-
-        <div style="float:left">
-            <button value="text" id="toHead" class="buttonCSS toheadcss" onclick="window.location.href='index.html'">На главную</button>
-        </div>
 
         <div>
             <input placeholder="Номер задания" type="text" class="buttonCSS" id="inputButton">
@@ -118,6 +128,8 @@
         </div>
 
     </div>
+
+
 
     <script src="script.js"></script>
 

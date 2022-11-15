@@ -3,6 +3,7 @@
 :root {
     --back-white: #ffffff;
     --back-dark: #222;
+    --margin-of-buttons: 15px;
 }
 
 
@@ -27,9 +28,9 @@ textarea:focus, input:focus, button:focus{
 
 .center {
     height: 100vh;
-    width: 700px;
+    width: 800px;
     margin: 0 auto;
-    display: grid;
+    display: none;
     align-items: center;
     align-content: center;
 } 
@@ -51,8 +52,8 @@ textarea:focus, input:focus, button:focus{
 }
 
 .bottomright {
-    bottom: 10px;
-    right: 10px;
+    bottom: var(--margin-of-buttons);
+    right: var(--margin-of-buttons);
 }
 
 .bottomleft {
@@ -62,16 +63,13 @@ textarea:focus, input:focus, button:focus{
 }
 
 .toprigth {
-    top: 10px;
-    right: 10px;
-    height: 100px;
+    top: var(--margin-of-buttons);
+    right: var(--margin-of-buttons);
 }
 
 .topleft {
-    top: 10px;
-    left: 10px;
-    width: 175px;
-    height: 49px;
+    top: var(--margin-of-buttons);
+    left: var(--margin-of-buttons);
 }
 
 .inputButton{
@@ -83,6 +81,7 @@ textarea:focus, input:focus, button:focus{
 @media only screen and (max-width: 600px) {
     .center {
         width: 95vw;
+        margin-top: 75px;
     }
 
     h3 {
@@ -90,29 +89,28 @@ textarea:focus, input:focus, button:focus{
     }
 
     .margin {
-        font-size: 12px;
-    }
-
-    .center {
-        margin-top: 75px;
+        font-size: 14px;
     }
 
     #SmallDOGE, #BigDOGE {
         display: none;
     }
 
+    #question {
+        font-size: 1em!important;
+    }
+
+    .developed {
+        display: none;
+    }
+
 }
 
-@media only screen and (max-width: 300px) {
-    h3 {
-        font-size:12px;
-    }
-}
 
 .margin {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 .rightwrongtext {
@@ -123,7 +121,7 @@ textarea:focus, input:focus, button:focus{
 }
 
 .toheadcss {
-    margin-bottom: 5px;
+    margin-top: 0px;
 }
 
 #Sign {
@@ -149,6 +147,10 @@ textarea:focus, input:focus, button:focus{
 
 #wrongtext {
     color:red;
+}
+
+#question {
+    font-size: 1.3em;
 }
 
 #testQuestion {
@@ -269,4 +271,22 @@ input[type=checkbox]
 
 .buttonCSS:-webkit-details-marker {
     display: none;
+}
+
+.rightwrongWrapper {
+    text-align: left;
+}
+
+.developed{
+    text-align: left;
+    position: fixed;
+    bottom: var(--margin-of-buttons);
+    width: 800px;
+}
+
+h6 {
+    font-weight: normal;
+}
+a {
+    color:white;
 }
