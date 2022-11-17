@@ -89,7 +89,7 @@ textarea:focus, input:focus, button:focus{
     }
 
     .margin {
-        font-size: 14px;
+        font-size: 14px!important;
     }
 
     #SmallDOGE, #BigDOGE {
@@ -110,7 +110,7 @@ textarea:focus, input:focus, button:focus{
 .margin {
     margin-top: 20px;
     margin-bottom: 20px;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .rightwrongtext {
@@ -128,29 +128,25 @@ textarea:focus, input:focus, button:focus{
     display: none;
 }
 
+#right, #wrong {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
 #right {
-    margin-top: 20px;
-    color:lime;
-    font-size: 17px;
-    font-weight: bold;
+    margin-top: var(--margin-of-buttons);
 }
 
-#righttext {
+#righttext, #right {
     color:lime;
 }
 
-#wrong {
-    color:red;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-#wrongtext {
+#wrong, #wrongtext {
     color:red;
 }
 
 #question {
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 #testQuestion {
@@ -213,10 +209,9 @@ input[type=checkbox]
 }
 
 .buttonCSS {
-    width: 120px;
+    width: 110px;
     height: 40px;
     border: 0;
-    font-size: 14px;
     appearance: none;
     background-color: #FAFBFC;
     border: 1px solid rgba(27, 31, 35, 0.15);
@@ -227,7 +222,7 @@ input[type=checkbox]
     cursor: pointer;
     display: inline-block;
     font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 14px;
+    font-size: 1em;
     font-weight: 500;
     line-height: 20px;
     list-style: none;
@@ -240,10 +235,11 @@ input[type=checkbox]
     vertical-align: middle;
     white-space: nowrap;
     word-wrap: break-word;
+    text-align: center;
 }
 
 .buttonCSS:hover {
-    background-color: #F3F4F6;
+    background-color: #eaeaea;
     text-decoration: none;
     transition-duration: 0.1s;
 }
