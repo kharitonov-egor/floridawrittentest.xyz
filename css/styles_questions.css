@@ -62,6 +62,11 @@ textarea:focus, input:focus, button:focus{
     transform: translateY(100%);
 }
 
+.bottomleft2 {
+    bottom: var(--margin-of-buttons);
+    left: var(--margin-of-buttons);
+}
+
 .toprigth {
     top: var(--margin-of-buttons);
     right: var(--margin-of-buttons);
@@ -122,6 +127,7 @@ textarea:focus, input:focus, button:focus{
 
 .toheadcss {
     margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 #Sign {

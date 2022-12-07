@@ -185,6 +185,13 @@ function CheckKey(event) {
 
 	if (event.keyCode == '37') {PreviousQuestion();}
 	if (event.keyCode == '39') {NextQuestion();}
+	if (event.keyCode == '13') {CheckIfRight();} // enter
+
+	if (event.keyCode == '49') {A.checked = true;} // 1
+	if (event.keyCode == '50') {B.checked = true;} // 2
+	if (event.keyCode == '51') {C.checked = true;} // 3
+
+	if (event.keyCode == '32') {A.checked= B.checked = C.checked = false;} // space
 }
 
 function ChangeSign (CurrentQuestionIndex) {

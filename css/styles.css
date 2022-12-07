@@ -23,9 +23,14 @@ body {
 
 .container {
     width: 800px;
-    height: 100vh;
+    height: 80vh;
     margin: 0 auto;
     justify-content: center;
+}
+
+.lefttop {
+    left: 10px;
+    top: 10px;
 }
 
 .DonateButton {
@@ -60,13 +65,13 @@ h3,h4 {
 }
 
 .headerHow {
-    padding-top: 20px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .developed{
     text-align: center;
     margin-top: 1vh;
+    display: none;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -110,7 +115,7 @@ h3,h4 {
 }
 
 .section {
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 
 h6 {

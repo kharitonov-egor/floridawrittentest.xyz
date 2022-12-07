@@ -39,6 +39,7 @@
 </head>
 <body>
 
+
     <img src="icons/smalldoge.png" class="smalldoge" width="125" height="125" id="SmallDOGE">
 
     <img src="icons/bigdoge.png" class="bigdoge" width="125" height="125" id="BigDOGE">
@@ -50,9 +51,11 @@
              
         <img src="images/5.png" width="175" id="Sign">
 
-        <div>
+        <div >
             <button value="text" id="toHead" class="buttonCSS toheadcss" onclick="window.location.href='index.html'">На главную</button>
         </div>
+
+        <div id="google_translate_element"></div>
 
     </div>
 
@@ -132,6 +135,21 @@
 
 
     <script src="script.js"></script>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'ru'},
+                'google_translate_element'
+            );
+        }
+    </script>
+ 
+    <script type="text/javascript"
+            src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+    </script>
 
     <!---
     <a target="_blank" href="https://icons8.com/icon/s1-q7JfG-sh7/florida-flag">Florida Flag</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
