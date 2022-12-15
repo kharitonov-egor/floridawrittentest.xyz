@@ -1,10 +1,15 @@
 # Info
 
-[floridawrittentest.xyz](https://floridawrittentest.xyz/) was created to help people get Driver License in Florida, US
+[floridawrittentest.xyz](https://floridawrittentest.xyz/) was created to help people get driver's license in Florida, US
 
-On the main page you can see guide on how to get Driver License
+On the main page you can see guide on how to get driver's license
 
-On the [questions page](https://floridawrittentest.xyz/questions.html) you can practice to take Written Test
+On the [questions page](https://floridawrittentest.xyz/questions.html) you can practice to take written Test
+
+## Images of project
+
+<img src="https://user-images.githubusercontent.com/81391756/207892251-2cde93ee-b850-41a6-add1-8a8a55906c28.png" width=700>
+<img src="https://user-images.githubusercontent.com/81391756/207891588-83a2aba0-29bc-4056-bcb1-3521915e0d7f.png" width=700>
 
 ## TO-DO list
 
@@ -18,6 +23,6 @@ On the [questions page](https://floridawrittentest.xyz/questions.html) you can p
 
 ### Advanced
 
-1. Add English version
+1. ~~Add English version~~
 2. Add light theme
 3. ~~TO-DO list~~
