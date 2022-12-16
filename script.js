@@ -265,7 +265,7 @@ function TranslateToRussian () {
 
 const questions = [
     {
-		question:"Сколько будет 2+2?",
+		question:"Сколько будет 2 плюс 2?",
 		answers: [
 			{text: '4', correct: true},
 			{text: '22', correct: false},

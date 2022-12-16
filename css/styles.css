@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
 
+.goog-te-banner-frame {display:none;}
+#goog-gt-tt {display:none!important;visibility:hidden!important;}
+
+.goog-te-banner-frame.skiptranslate {display: none!important;} 
+body {top: 0px!important;}
+
 :root {
     --back-white: #ffffff;
     --back-dark: #222;
@@ -23,7 +29,7 @@ body {
 
 .container {
     width: 800px;
-    height: 80vh;
+    height: 100vh;
     margin: 0 auto;
     justify-content: center;
 }
@@ -31,6 +37,7 @@ body {
 .lefttop {
     left: 10px;
     top: 10px;
+    color: white;
 }
 
 .DonateButton {
@@ -65,16 +72,19 @@ h3,h4 {
 }
 
 .headerHow {
+    padding-top: 20px;
     margin-bottom: 30px;
 }
 
-.developed{
+.developed {
     text-align: center;
-    margin-top: 1vh;
-    display: none;
+    position: fixed;
+    bottom: 15px;
+    width: 800px;
+    font-weight: normal;
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1200px) {
 
     .container {
         width: 90vw;
