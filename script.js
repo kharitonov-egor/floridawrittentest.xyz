@@ -38,7 +38,7 @@ const Prep1 = document.querySelector('#Prep1')
 const Prep2 = document.querySelector('#Prep2')
 
 const Translator228 = document.querySelector('#Translator228')
-
+const questionWrapperId = document.querySelector('#questionWrapperId')
 
 const HowToLicense = document.querySelector('#HowToLicense')
 

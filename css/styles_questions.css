@@ -89,10 +89,9 @@ textarea:focus, input:focus, button:focus{
     display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .center {
         width: 95vw;
-        margin-top: 75px;
     }
 
     h3 {
@@ -111,12 +110,15 @@ textarea:focus, input:focus, button:focus{
         font-size: 1em!important;
     }
 
-    .developed {
-        display: none;
-    }
-
 }
 
+.questionWrapper1 {
+    margin-top: 0px;
+}
+
+.questionWrapper2 {
+    margin-top: 20px;
+}
 
 .margin {
     margin-top: 20px;
@@ -289,7 +291,7 @@ input[type=checkbox]
     text-align: left;
     position: fixed;
     bottom: var(--margin-of-buttons);
-    width: 800px;
+    width: min(800px, 95vw);
 }
 
 h6 {
