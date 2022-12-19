@@ -42,6 +42,9 @@ const Translator228 = document.querySelector('#Translator228')
 
 const HowToLicense = document.querySelector('#HowToLicense')
 
+const DogeONOFF = document.querySelector('#DogeONOFF')
+const DogeONOFFText = document.querySelector('#DogeONOFFText')
+
 const QuestionChangeDelay = 3000 // A number of ms after question is change after answer
 
 // Buttons functions reference:
@@ -144,8 +147,12 @@ function RightAnswer () {
 
 	// Showing big Doge:
 
-	BigDOGE.style.transform="translateY(20%)"
-	setTimeout("BigDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay); 
+	if (DogeONOFF.checked) {
+		BigDOGE.style.transform="translateY(20%)"
+		setTimeout("BigDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay); 
+	}
+
+
 }
 
 function WrongAnswer () {
@@ -154,8 +161,11 @@ function WrongAnswer () {
 
 	//Showing small Doge:
 
-	SmallDOGE.style.transform="translateY(20%)"
-	setTimeout("SmallDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay);
+	if (DogeONOFF.checked) {
+		SmallDOGE.style.transform="translateY(20%)"
+		setTimeout("SmallDOGE.style.transform='translateY(100%)'" ,QuestionChangeDelay);
+	}
+
 }
 
 function ChangeRightWrong () {
