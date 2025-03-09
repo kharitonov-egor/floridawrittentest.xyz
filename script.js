@@ -45,7 +45,7 @@ const HowToLicense = document.querySelector('#HowToLicense')
 const DogeONOFF = document.querySelector('#DogeONOFF')
 const DogeONOFFText = document.querySelector('#DogeONOFFText')
 
-const QuestionChangeDelay = 3000 // A number of ms after question is change after answer
+const QuestionChangeDelay = 60000 // A number of ms after question is change after answer (minute)
 
 // Buttons functions reference:
 
@@ -85,6 +85,11 @@ function ChangeHeader () {
 		toHead.style.marginTop = "0px"}
 
 	//Changing question and answers:
+
+	righttext.style.display="none"
+	wrongtext.style.display="none"
+
+	AText.style.color=BText.style.color=CText.style.color="#f1f1f1";
 	
 	question.innerHTML = questions[CurrentQuestionIndex].question;
 	AText.innerHTML = questions[CurrentQuestionIndex].answers[0].text;
