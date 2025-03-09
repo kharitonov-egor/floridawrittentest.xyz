@@ -10,6 +10,10 @@ const B = document.querySelector('#B')
 const C = document.querySelector('#C')
 const CheckRight = document.querySelector('#CheckRight')
 const StartButton = document.querySelector('#StartButton')
+
+const PreviousButton = document.querySelector('#PreviousButton')
+const NextButton = document.querySelector('#NextButton')
+
 const AText = document.querySelector('#AText')
 const BText = document.querySelector('#BText')
 const CText = document.querySelector('#CText')
@@ -45,13 +49,17 @@ const HowToLicense = document.querySelector('#HowToLicense')
 const DogeONOFF = document.querySelector('#DogeONOFF')
 const DogeONOFFText = document.querySelector('#DogeONOFFText')
 
-const QuestionChangeDelay = 60000 // A number of ms after question is change after answer (minute)
+const QuestionChangeDelay = 600000 // A number of ms after question is change after answer (minute)
 
 // Buttons functions reference:
 
 CheckRight.onclick = CheckIfRight 
 StartButton.onclick = StartQuiz
 SkipButton.onclick = SkipFunction
+
+PreviousButton.onclick = PreviousQuestion
+
+NextButton.onclick = NextQuestion
 
 // Setting up variables and array for futher use:
 
