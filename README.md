@@ -1,6 +1,6 @@
 # Info
 
-[floridawrittentest.xyz](https://floridawrittentest.xyz/) was created to help people get driver's license in Florida, US
+[floridawrittentest](https://kharitonov-egor.github.io/floridawrittentest.xyz/) was created to help people get driver's license in Florida, US
 
 On the main page you can see guide on how to get driver's license
 
