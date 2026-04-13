@@ -1,17 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-.goog-te-banner-frame {display:none;}
-#goog-gt-tt {display:none!important;visibility:hidden!important;}
-
-.goog-te-banner-frame.skiptranslate {display: none!important;} 
-body {top: 0px!important;}
+/* Google Translate overrides */
+.goog-te-banner-frame { display: none; }
+#goog-gt-tt { display: none !important; visibility: hidden !important; }
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0px !important; }
 
 :root {
-    --back-white: #ffffff;
-    --back-dark: #222;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #1e293b;
+    --bg-card-hover: #263348;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --accent-glow: rgba(56, 189, 248, 0.15);
+    --border: rgba(148, 163, 184, 0.1);
+    --success: #34d399;
+    --danger: #f87171;
+    --container-width: 720px;
+    --radius: 16px;
+    --radius-sm: 10px;
     --margin-of-buttons: 15px;
 }
-
 
 * {
     box-sizing: border-box;
@@ -21,41 +34,104 @@ body {top: 0px!important;}
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--back-dark);
-    color: #f1f1f1;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-textarea:focus, input:focus, button:focus{
+textarea:focus, input:focus, button:focus {
     outline: none;
 }
 
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+h6 {
+    font-weight: 400;
+}
+
+/* ====================== */
+/* Layout                 */
+/* ====================== */
+
 .center {
-    height: 100vh;
-    width: 800px;
+    width: 100%;
+    max-width: var(--container-width);
     margin: 0 auto;
+    padding: 80px 24px 100px;
     display: none;
     align-items: center;
     align-content: center;
-} 
+}
+
+.pos {
+    position: absolute;
+}
 
 .start {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: block;
-} 
+}
 
-.pos {
-    position: absolute;
+/* ====================== */
+/* Top-left panel (sign, nav, translate) */
+/* ====================== */
+
+.topleft {
+    top: var(--margin-of-buttons);
+    left: var(--margin-of-buttons);
+}
+
+#Sign {
+    display: none;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.toheadcss {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+/* ====================== */
+/* Top-right panel (go-to, doge toggle) */
+/* ====================== */
+
+.toprigth {
+    top: var(--margin-of-buttons);
+    right: var(--margin-of-buttons);
 }
 
 #inputButton {
     margin-bottom: 10px;
     display: none;
 }
+
+#go {
+    display: none;
+}
+
+.DogeONOFFclass {
+    margin-top: 10px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ====================== */
+/* Bottom nav buttons     */
+/* ====================== */
 
 .bottomright {
     bottom: var(--margin-of-buttons);
@@ -68,30 +144,249 @@ textarea:focus, input:focus, button:focus{
     transform: translateY(100%);
 }
 
-.bottomleft2 {
-    bottom: var(--margin-of-buttons);
-    left: var(--margin-of-buttons);
-}
-
-.toprigth {
-    top: var(--margin-of-buttons);
-    right: var(--margin-of-buttons);
-}
-
-.topleft {
-    top: var(--margin-of-buttons);
-    left: var(--margin-of-buttons);
-}
-
-.inputButton{
-    height: 30px;
-    width: 110px;
+#next, #previous {
     display: none;
 }
+
+/* ====================== */
+/* Buttons                */
+/* ====================== */
+
+.buttonCSS {
+    height: 42px;
+    padding: 8px 20px;
+    min-width: 110px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.buttonCSS:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(148, 163, 184, 0.25);
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.buttonCSS:active {
+    transform: translateY(0);
+    background: var(--bg-secondary);
+}
+
+.buttonCSS:disabled {
+    opacity: 0.4;
+    cursor: default;
+    transform: none;
+}
+
+/* Start button - special accent style */
+#StartButton {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 14px 48px;
+    height: auto;
+    min-width: 160px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+    letter-spacing: 0.02em;
+}
+
+#StartButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(37, 99, 235, 0.45);
+    color: white;
+}
+
+/* Check / Submit answer button */
+#CheckRight {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    border: none;
+    color: white;
+    font-weight: 600;
+    min-width: 130px;
+    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.2);
+}
+
+#CheckRight:hover {
+    box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
+    color: white;
+    transform: translateY(-1px);
+}
+
+#SkipButton {
+    display: none;
+}
+
+/* ====================== */
+/* Question card           */
+/* ====================== */
+
+.questionWrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-top: 0;
+}
+
+#testQuestion {
+    margin-bottom: 16px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#question {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+/* Answer options */
+.margin {
+    margin: 16px 0;
+    font-size: 1rem;
+    padding: 12px 16px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: var(--text-secondary);
+}
+
+.margin:hover {
+    border-color: rgba(148, 163, 184, 0.25);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+input[type=checkbox] {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+    accent-color: var(--accent);
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+/* Right / Wrong counters */
+#right, #wrong {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#right {
+    margin-top: 20px;
+}
+
+#righttext, #right {
+    color: var(--success);
+}
+
+#wrong, #wrongtext {
+    color: var(--danger);
+}
+
+/* Right / Wrong flash text */
+.rightwrongWrapper {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.rightwrongtext {
+    display: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.margin-bottom {
+    margin-bottom: 15px;
+}
+
+/* Nav buttons under question */
+#PreviousButton, #NextButton {
+    margin-top: 4px;
+}
+
+/* ====================== */
+/* Doge Easter Egg        */
+/* ====================== */
+
+.smalldoge {
+    position: fixed;
+    bottom: 0px;
+    left: 45px;
+    transition: transform 1s ease;
+    transform: translateY(100%);
+    z-index: 100;
+}
+
+.bigdoge {
+    position: fixed;
+    bottom: 0px;
+    left: 45px;
+    transition: transform 1s ease;
+    transform: translateY(100%);
+    z-index: 100;
+}
+
+/* ====================== */
+/* Footer                 */
+/* ====================== */
+
+.developed {
+    text-align: left;
+    position: fixed;
+    bottom: var(--margin-of-buttons);
+    width: min(var(--container-width), calc(100vw - 48px));
+}
+
+.developed h6 {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.developed a {
+    color: var(--text-secondary);
+}
+
+.developed a:hover {
+    color: var(--accent);
+}
+
+/* ====================== */
+/* Responsive             */
+/* ====================== */
 
 @media only screen and (max-width: 900px) {
     .center {
         width: 95vw;
+        padding: 60px 16px 100px;
+    }
+
+    .questionWrapper {
+        padding: 24px 20px;
     }
 
     h3 {
@@ -99,7 +394,8 @@ textarea:focus, input:focus, button:focus{
     }
 
     .margin {
-        font-size: 14px!important;
+        font-size: 0.9rem !important;
+        padding: 10px 14px;
     }
 
     #SmallDOGE, #BigDOGE {
@@ -107,200 +403,17 @@ textarea:focus, input:focus, button:focus{
     }
 
     #question {
-        font-size: 1em!important;
+        font-size: 1.05rem !important;
     }
 
-}
+    .buttonCSS {
+        min-width: 90px;
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
 
-.questionWrapper1 {
-    margin-top: 0px;
-}
-
-.questionWrapper2 {
-    margin-top: 20px;
-}
-
-.margin {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 1.1em;
-}
-
-.rightwrongtext {
-    right: 50vw;
-    left: 50vw;
-    top: 10px;
-    display: none;
-}
-
-.toheadcss {
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
-
-#Sign {
-    display: none;
-}
-
-#right, #wrong {
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
-#right {
-    margin-top: var(--margin-of-buttons);
-}
-
-#righttext, #right {
-    color:lime;
-}
-
-#wrong, #wrongtext {
-    color:red;
-}
-
-#question {
-    font-size: 1.4em;
-}
-
-#testQuestion {
-    margin-bottom: 15px;
-}
-
-.margin-bottom {
-    margin-bottom: 15px;
-}
-
-.leftfloat {
-    float:left;
-}
-
-input[type=checkbox]
-{
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(1.15); /* IE */
-  -moz-transform: scale(1.15); /* FF */
-  -webkit-transform: scale(1.15); /* Safari and Chrome */
-  -o-transform: scale(1.15); /* Opera */
-  transform: scale(1.15);
-  padding: 10px;
-}
-
-#next {
-    display: none;
-}
-
-#previous {
-    display: none;
-}
-
-.smalldoge {
-    position:fixed;
-    bottom:0px;
-    left:100%;
-    -webkit-transition: -webkit-transform 1s ease;
-    transition: -webkit-transform 1s ease;
-    transition: transform 1s ease;
-    transition: transform 1s ease, -webkit-transform 1s ease;
-    left: 45px; 
-    transform: translateY(100%);
-}
-
-.bigdoge {
-    position:fixed;
-    bottom:0px;
-    left:100%;
-    -webkit-transition: -webkit-transform 1s ease;
-    transition: -webkit-transform 1s ease;
-    transition: transform 1s ease;
-    transition: transform 1s ease, -webkit-transform 1s ease;
-    left: 45px; 
-    transform: translateY(100%);
-}
-
-#go {
-    display: none;
-}
-
-.buttonCSS {
-    width: 110px;
-    height: 40px;
-    border: 0;
-    appearance: none;
-    background-color: #FAFBFC;
-    border: 1px solid rgba(27, 31, 35, 0.15);
-    border-radius: 6px;
-    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
-    box-sizing: border-box;
-    color: #24292E;
-    cursor: pointer;
-    display: inline-block;
-    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    font-size: 1em;
-    font-weight: 500;
-    line-height: 20px;
-    list-style: none;
-    padding: 6px;
-    position: relative;
-    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
-    word-wrap: break-word;
-    text-align: center;
-}
-
-.buttonCSS:hover {
-    background-color: #eaeaea;
-    text-decoration: none;
-    transition-duration: 0.1s;
-}
-
-.buttonCSS:disabled {
-    background-color: #FAFBFC;
-    border-color: rgba(27, 31, 35, 0.15);
-    color: #959DA5;
-    cursor: default;
-}
-
-.buttonCSS:active {
-    background-color: #EDEFF2;
-    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-    transition: none 0s;
-}
-
-.buttonCSS:focus {
-    outline: 1px transparent;
-}
-
-.buttonCSS:before {
-    display: none;
-}
-
-.buttonCSS:-webkit-details-marker {
-    display: none;
-}
-
-.rightwrongWrapper {
-    text-align: left;
-}
-
-.developed{
-    text-align: left;
-    position: fixed;
-    bottom: var(--margin-of-buttons);
-    width: min(800px, 95vw);
-}
-
-h6 {
-    font-weight: normal;
-}
-a {
-    color:white;
-}
-
-.DogeONOFFclass {
-    margin-top: 10px;
+    #StartButton {
+        font-size: 1rem;
+        padding: 12px 40px;
+    }
 }
